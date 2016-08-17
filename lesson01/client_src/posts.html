@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><title>ADV_FE APP | Lesson1 | Stage 1</title></title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+
+<body>
+<div class="layout">
+
+    <div class="header">
+        <div class="header-layout">
+            <div class="application-logo"></div>
+            <div class="application-text">
+                <div class="application-text__greeting">Welcome dude</div>
+                <div class="application-text__cta">Let's share photo with all world</div>
+            </div>
+            <div class="user-menu">
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="posts-container">
+            <div>
+                <div class="posts-container__search">
+                    <input type="text" class="posts-container__search-input"/>
+                </div>
+                <div class="posts-container__menu">
+                    <div class="posts-container__menu-item posts-container__menu-item_selected">POPULAR</div>
+                    <div class="posts-container__menu-item">MY PHOTO</div>
+                </div>
+            </div>
+
+            <div class="posts-container__list">
+            </div>
+
+            <div class="posts-container__navigation">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+    </div>
+</div>
+
+<script type="text/x-handlebars-template" id="posts-list-template">
+    <div class="posts-list">
+        {{#each posts}}
+        {{> post-preview postClass="posts-list__post"}}
+        {{/each}}
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="post-preview-template">
+    <div class="post-preview {{postClass}}">
+        <div class="post-preview__island">
+            <div class="post-preview__img-wrapper">
+                <img class="post-preview__img" src="{{imgUrl}}"/>
+            </div>
+            <div class="post-preview__description">{{bold text=description}}</div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="navigation-template">
+    <div class="navigation">
+        {{#nav count=count selected=selected}}
+        <div class="navigation__number {{#if selected}} navigation__number_selected {{/if}}" data-id="{{number}}">
+            {{number}}
+        </div>
+        {{/nav}}
+    </div>
+</script>
+
+<script id="posts-list-computed-template" type="text/x-handlebars-template">
+    <div class="posts-list-computed">
+        {{#each posts}}
+        {{> post-preview }}
+        {{/each}}
+    </div>
+</script>
+
+<script id="post-template" type="text/x-handlebars-template">
+    <div class="post-preview {{postClass}}">
+        <div class="post-preview__island">
+            <div class="post-preview__img-wrapper">
+                <img class="post-preview__img" src="{{imgUrl}}"/>
+            </div>
+            <div class="post-preview__description">{{bold description color="red"}}</div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="navigation">
+    <div class="navigation">
+        {{#nav count=count selected=selected}}
+        <div class="navigation__number {{#if selected}}navigation__number_selected{{/if}}">
+            {{number}}
+        </div>
+    </div>
+    {{/nav}}
+</script>
+
+<script src="/libs/jquery/dist/jquery.js"></script>
+<script src="/libs/handlebars/handlebars.js"></script>
+<script src="/data.js"></script>
+<script src="/posts.js"></script>
+</body>
+
+</html>

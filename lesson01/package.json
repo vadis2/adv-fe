@@ -1,0 +1,16 @@
+{
+  "name": "adv-fe",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "latest"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "run-sequence": "^1.2.2"
+  }
+}
