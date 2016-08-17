@@ -1,5 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 lesson01/node_modules
 lesson01/libs
+lesson03/node_modules
+lesson03/libs
 .idea
 *.log
