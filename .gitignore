@@ -3,5 +3,6 @@ lesson01/node_modules
 lesson01/libs
 lesson03/node_modules
 lesson03/libs
+lesson03/bin
 .idea
 *.log
