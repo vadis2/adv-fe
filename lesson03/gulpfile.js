@@ -3,22 +3,22 @@
  */
 'use strict';
 
-const destDir = 'bin';
-const gulp = require('gulp');
+var destDir = 'bin';
+var gulp = require('gulp');
 var bower = require('gulp-bower');
 var gulpIf = require('gulp-if');
 var concat = require('gulp-concat');
 var less = require('gulp-less');
 var argv = require('yargs').argv;
 var cssnano = require('gulp-cssnano');
-const sourcemaps = require('gulp-sourcemaps');
+var sourcemaps = require('gulp-sourcemaps');
 var clean = require('gulp-clean');
 var uglify = require('gulp-uglify');
 var csscomb = require('gulp-csscomb');
 var jscs = require('gulp-jscs');
 var jshint = require('gulp-jshint');
 var htmlhint = require("gulp-htmlhint");
-const browserSync = require('browser-sync').create();
+var browserSync = require('browser-sync').create();
 var htmlmin = require('gulp-htmlmin');
 var autoprefixer = require('gulp-autoprefixer');
 
@@ -32,8 +32,10 @@ gulp.task('copy-static', function () {
 });
 
 gulp.task('css', function () {
+    var compact = argv.prod || false;
+    compact = (compact === 'true') ? false : true;
     return gulp.src('styles/**/*.less')
-        .pipe(gulpIf(argv.prod, sourcemaps.init()))
+        .pipe(gulpIf(compact, sourcemaps.init()))
         .pipe(concat('styles.css'))
         .pipe(less())
         .pipe(autoprefixer())
