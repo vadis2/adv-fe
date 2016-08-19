@@ -1,0 +1,23 @@
+ul {
+    margin: 20px 5px;
+    padding: 0;
+    list-style: none;
+    border: 2px solid #555;
+}
+
+li {
+    border-bottom: 1px solid #999;
+}
+
+.odd {
+    background: #eee;
+}
+
+.last {
+    border-bottom: none;
+}
+
+p {
+    margin: 0;
+    padding: 10px 10px 20px 6px;
+}
